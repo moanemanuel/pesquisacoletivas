@@ -126,7 +126,7 @@ const db = require('./helpers/db');
 	}, 2000);
 
 	setTimeout(function(){
-		client.sendMessage(msg.from, 'Testando');
+		client.sendMessage(msg.from, 'Ah, sim! Pois tá feito o convite haha');
 	}, 5000); // se incluir o "bom" ou "boa" exemplo: bom dia! enviará Testando // ENVIAR MENSAGEM TEXTO COM TEMPO CERTINHO
 	
 	
