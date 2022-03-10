@@ -107,7 +107,7 @@ const db = require('./helpers/db');
 	  }else if (msg.body.includes ('Aula de Bike') || msg.body.includes ('Aula de Pump') || msg.body.includes ('Aula de Step') || msg.body.includes ('Aula de Abdominais') || msg.body.includes ('Aula de Ritmus') ) {
 	  setAlunoAula = await db.setAula(msg.body,user); 
 	  let sections = [{title:' Como você classifica *qualidade da aula/animação:',rows:[{title:'TOP! Agora vou sempre 💥🔝'},{title:'Foi boa até! 😊'},{title:'Morgada! Não atendeu minhas expectativas 👎🏼'},{title:'Não gostei! Poderia ter sido melhor 😞'}]}];
-      let list = new List('Por favor, avalie nossa aula coletiva.. ','AVALIAR AULA',sections,'Já finalizando.. haha! 🎆😁 ','.');
+      let list = new List('Por favor, avalie nossa aula coletiva.. ','AVALIAR AULA',sections,'Já finalizando.. haha! 😁🎉 ','.');
       client.sendMessage(msg.from, list); // ARMAZENANDO PROFESSOR NO MYSQL + LISTA PERGUNTANDO NOTA
 	 
 
