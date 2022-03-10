@@ -60,6 +60,16 @@ const db = require('./helpers/db');
     if(getUserFrom == false) {
         setUserFrom = await db.setUser(user);
 		
+	setTimeout(async () =>{
+		const chat = await msg.getChat();
+    		await chat.sendStateTyping();
+	}, 2000);
+
+	setTimeout(function(){
+		client.sendMessage(msg.from, 'Pfv me responde uma coisa.. você participou de nossas aulas coletivas hoje?? 💪🏽💥');
+	}, 5000);
+		
+		
     
 	// ARMAZENANDO DADOS UNIDADE + DISPONIBILIZANDO LISTA PROFESSORES
 	}else if (msg.body.includes ('Noova - Currais Novos')) { // Mensagem enviada pelo contato
@@ -126,7 +136,7 @@ const db = require('./helpers/db');
 	}, 2000);
 
 	setTimeout(function(){
-		client.sendMessage(msg.from, 'Ah, sim! Pois tá feito o convite haha');
+		client.sendMessage(msg.from, 'Testando');
 	}, 5000); // se incluir o "bom" ou "boa" exemplo: bom dia! enviará Testando // ENVIAR MENSAGEM TEXTO COM TEMPO CERTINHO
 	
 	
@@ -147,24 +157,6 @@ const db = require('./helpers/db');
 	}, 5000); // ENVIA MENSAGEM DIZENDO QUE NÃO CONSEGUE OUVIR
  	
 	
-	} else if (msg.body.includes ('bom dia')|| msg.body.includes ('oi')|| msg.body.includes ('Oi')|| msg.body.includes ('Olá') || msg.body.includes ('Boa tarde') || msg.body.includes ('Bom dia') || msg.body.includes ('Boa noite')) {
-    const chat = await msg.getChat();
-	await chat.sendStateTyping();
-    const contact = await msg.getContact();
-    await chat.sendMessage(`Oii, @${contact.id.user}! Você participou de alguma aula coletiva hoje?`, {
-      mentions: [contact]});
-	  } else if(msg.body.toLowerCase() === '!everyone') {
-    const chat = await msg.getChat();
-	await chat.sendStateTyping();
-    let text = "";
-    let mentions = [];
-      for(let participant of chat.participants) {
-        const contact = await client.getContactById(participant.id._serialized);
-          mentions.push(contact);
-          text += `@${participant.id.user} `;
-      }
-        await chat.sendMessage(text, { mentions });
-	  // Dá os boas vindas com pergunta
 	
 	
 	  }
