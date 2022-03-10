@@ -10,7 +10,7 @@ const fileUpload = require('express-fileupload');
 const axios = require('axios');
 const mime = require('mime-types');
 
-const port = process.env.PORT || 8004;
+const port = process.env.PORT || 8005;
 
 const app = express();
 const server = http.createServer(app);
@@ -60,17 +60,6 @@ const db = require('./helpers/db');
     if(getUserFrom == false) {
         setUserFrom = await db.setUser(user);
 		
-		
-		setTimeout(async () =>{
-		const chat = await msg.getChat();
-    		await chat.sendStateTyping();
-	}, 2000);
-	
-	setTimeout(function(){
-    client.sendMessage(msg.from, 'Oi!! Você participou de alguma aula coletiva hoje?');
-	}, 5000); 
-		
-		
     
 	// ARMAZENANDO DADOS UNIDADE + DISPONIBILIZANDO LISTA PROFESSORES
 	}else if (msg.body.includes ('Noova - Currais Novos')) { // Mensagem enviada pelo contato
@@ -94,7 +83,7 @@ const db = require('./helpers/db');
       let list = new List('Vou te ajudar com os nomes.. 👇🏼','Selecionar professor (a)',sections,'Qual professor (a) dirigiu a aula?','.');
       client.sendMessage(msg.from, list); 
 	  
-	}else if (msg.body.includes ('Emerson') || msg.body.includes ('Carla') || msg.body.includes ('Jackson') || msg.body.includes ('Julikelly') || msg.body.includes ('Matheus') || msg.body.includes ('Kauã') || 
+	}else if (msg.body.includes ('Emerson') || msg.body.includes ('Carla') || msg.body.includes ('Jackson') || msg.body.includes ('Rikelme') || msg.body.includes ('Julikelly') || msg.body.includes ('Matheus') || msg.body.includes ('Kauã') || 
 	msg.body.includes === ('Thawane')|| msg.body.includes ('Carmem') || msg.body.includes ('Einaldo') || msg.body.includes ('Andréia') || msg.body.includes ('Chikão') || msg.body.includes ('Du') || msg.body.includes ('Francisca') ||
 	msg.body.includes ('Jarbas') || msg.body.includes ('Rykelme') || msg.body.includes ('Villessa') || msg.body.includes ('Luiz') || msg.body.includes ('Luana Vanessa') ||
 	msg.body.includes ('Ademar') || msg.body.includes ('Janaina') || msg.body.includes ('Lucas Franklin') || msg.body.includes ('Suêni') || msg.body.includes ('Railsa') || msg.body.includes ('Juninho') ||
@@ -129,16 +118,16 @@ const db = require('./helpers/db');
 	  
 	  //////////// CONSTRUINDO INTERAÇÕES //////////////
 	
-	//} else if (msg.body.includes('zz') || msg.body.includes('xxx') || msg.body.includes ('xxx')) { 
+	} else if (msg.body.includes('Não participei') || msg.body.includes('não') || msg.body.includes ('Não')) { 
 
-//	setTimeout(async () =>{
-	//	const chat = await msg.getChat();
-  //  		await chat.sendStateTyping();
-//	}, 2000);
+	setTimeout(async () =>{
+		const chat = await msg.getChat();
+    		await chat.sendStateTyping();
+	}, 2000);
 
-//	setTimeout(function(){
-//		client.sendMessage(msg.from, 'Testando');
-	//}, 5000); // se incluir o "bom" ou "boa" exemplo: bom dia! enviará Testando // ENVIAR MENSAGEM TEXTO COM TEMPO CERTINHO
+	setTimeout(function(){
+		client.sendMessage(msg.from, 'Testando');
+	}, 5000); // se incluir o "bom" ou "boa" exemplo: bom dia! enviará Testando // ENVIAR MENSAGEM TEXTO COM TEMPO CERTINHO
 	
 	
 	
