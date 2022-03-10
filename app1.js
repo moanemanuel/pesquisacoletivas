@@ -99,12 +99,12 @@ const db = require('./helpers/db');
 	msg.body.includes ('Ademar') || msg.body.includes ('Janaina') || msg.body.includes ('Lucas Franklin') || msg.body.includes ('Suêni') || msg.body.includes ('Railsa') || msg.body.includes ('Juninho') ||
 	msg.body.includes ('João Paulo') || msg.body.includes ('Lunácio') || msg.body.includes ('Roni') || msg.body.includes ('Jobinho') || msg.body.includes ('Neto') || msg.body.includes ('Ramonzinho')) {
 	  setAlunoProfessor = await db.setProfessor(msg.body,user);
-	  let sections = [{title:' Qual foi a aula: 💪🏼',rows:[{title:'Bike'},{title:'Pump'},{title:'Step'},{title: 'Abdominais'},{title: 'Ritmus'},]}];
+	  let sections = [{title:' Qual foi a aula: 💪🏼',rows:[{title:'Aula de Bike'},{title:'Aula de Pump'},{title:'Aula de Step'},{title: 'Aula de Abdominais'},{title: 'Aula de Ritmus'},]}];
       let list = new List('Me conta.. qual aula você participou com esse professor? ','Aula coletiva',sections,'Qual aula você participou com esse professor?','.');
       client.sendMessage(msg.from, list); // ARMAZENANDO PROFESSOR NO MYSQL + LISTA PERGUNTANDO QUAL AULA PARTICIPOU HOJE
 	  
 	
-	  }else if (msg.body.includes ('Bike') || msg.body.includes ('Pump') || msg.body.includes ('Step') || msg.body.includes ('Abdominais') || msg.body.includes ('Ritmus') ) {
+	  }else if (msg.body.includes ('Aula de Bike') || msg.body.includes ('Aula de Pump') || msg.body.includes ('Aula de Step') || msg.body.includes ('Aula de Abdominais') || msg.body.includes ('Aula de Ritmus') ) {
 	  setAlunoAula = await db.setAula(msg.body,user); 
 	  let sections = [{title:' Como você classifica *qualidade da aula/animação:',rows:[{title:'TOP! Agora vou sempre 💥🔝'},{title:'Foi boa até! 😊'},{title:'Morgada! Não atendeu minhas expectativas 👎🏼'},{title:'Não gostei! Poderia ter sido melhor 😞'}]}];
       let list = new List('Por favor, avalie nossa aula coletiva.. ','AVALIAR AULA',sections,'Já finalizando.. haha! 🎆😁 ','.');
