@@ -94,9 +94,9 @@ const db = require('./helpers/db');
       client.sendMessage(msg.from, list); 
 	  
 	}else if (msg.body.includes ('Emerson') || msg.body.includes ('Carla') || msg.body.includes ('Jackson') || msg.body.includes ('Rikelme') || msg.body.includes ('Julikelly') || msg.body.includes ('Matheus') || msg.body.includes ('Kauã') || 
-	msg.body.includes === ('Thawane')|| msg.body.includes ('Carmem') || msg.body.includes ('Einaldo') || msg.body.includes ('Andréia') || msg.body.includes ('Chikão') || msg.body.includes ('Du') || msg.body.includes ('Francisca') ||
+	msg.body.includes ('Thawane')|| msg.body.includes ('Carmem') || msg.body.includes ('Einaldo') || msg.body.includes ('Andréia') || msg.body.includes ('Chikão') || msg.body.includes ('Du') || msg.body.includes ('Francisca') ||
 	msg.body.includes ('Jarbas') || msg.body.includes ('Rykelme') || msg.body.includes ('Villessa') || msg.body.includes ('Luiz') || msg.body.includes ('Luana Vanessa') ||
-	msg.body.includes ('Ademar') || msg.body.includes ('Janaina') || msg.body.includes ('Lucas Franklin') || msg.body.includes ('Suêni') || msg.body.includes ('Railsa') || msg.body.includes ('Juninho') ||
+	msg.body.includes ('Ademar') || msg.body.includes ('Janaína') || msg.body.includes ('Lucas Franklin') || msg.body.includes ('Suêni') || msg.body.includes ('Railsa') || msg.body.includes ('Juninho') ||
 	msg.body.includes ('João Paulo') || msg.body.includes ('Lunácio') || msg.body.includes ('Roni') || msg.body.includes ('Jobinho') || msg.body.includes ('Neto') || msg.body.includes ('Ramonzinho')) {
 	  setAlunoProfessor = await db.setProfessor(msg.body,user);
 	  let sections = [{title:' Qual foi a aula: 💪🏼',rows:[{title:'Aula de Bike'},{title:'Aula de Pump'},{title:'Aula de Step'},{title: 'Aula de Abdominais'},{title: 'Aula de Ritmus'},]}];
