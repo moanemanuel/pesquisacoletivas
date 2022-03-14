@@ -66,54 +66,54 @@ const db = require('./helpers/db');
 	}, 2000);
 
 	setTimeout(function(){
-		client.sendMessage(msg.from, 'Pfv me responde uma coisa.. você participou de nossas aulas coletivas hoje?? 💪🏽💥');
+		client.sendMessage(msg.from, 'Pfv me responde uma coisa.. você participou de nossas aulas coletivas hoje??\n\n*Participei sim/Participei não* 💪🏽💥');
 	}, 5000);
 		
 		
     
 	// ARMAZENANDO DADOS UNIDADE + DISPONIBILIZANDO LISTA PROFESSORES
-	}else if (msg.body.includes ('Noova - Currais Novos')) { // Mensagem enviada pelo contato
+	}else if (msg.body === 'Noova - Currais Novos') { // Mensagem enviada pelo contato
 	  setAlunoUnidade = await db.setUnidade(msg.body,user);
 	  let sections = [{title:' Sua aula foi com qual professor (a)?',rows:[{title:'Ademar'},{title:'Lucas Franklin'},{title:'Neto'},{title:'Ramonzinho'},{title:'Luana Vanessa'},{title: 'Luiz'},{title: 'Jarbas'},{title: 'Rikelme'},{title: 'Villessa'},{title: 'Janaína'},]}];
       let list = new List('Vou te ajudar com os nomes.. 👇🏼','Selecionar professor (a)',sections,'Qual professor (a) dirigiu a aula?','.');
       client.sendMessage(msg.from, list);
-	}else if (msg.body.includes ('Noova - Parelhas')) {
+	}else if (msg.body === 'Noova - Parelhas') {
 	  setAlunoUnidade = await db.setUnidade(msg.body,user);
 	  let sections = [{title:'Sua aula foi com qual professor (a)?',rows:[{title:'Suêni'},{title:'Railsa'},{title:'Juninho'},{title:'Neto'},{title: 'João Paulo'},{title: 'Lunácio'},{title: 'Roni'},{title: 'Jobinho'},]}];
       let list = new List('Vou te ajudar com os nomes.. 👇🏼','Selecionar professor (a)',sections,'Qual professor (a) dirigiu a aula?','.');
       client.sendMessage(msg.from, list);  
-	 }else if (msg.body.includes ('Noova - Caicó')) {
+	 }else if (msg.body === 'Noova - Caicó') {
 	  setAlunoUnidade = await db.setUnidade(msg.body,user);
 	  let sections = [{title:'Sua aula foi com qual professor (a)?',rows:[{title:'Thawane'},{title:'Neto'},{title:'Carmem'},{title:'Einaldo'},{title: 'Andréia'},{title: 'Chikão'},{title: 'Du'},{title: 'Francisca'},]}];
       let list = new List('Vou te ajudar com os nomes.. 👇🏼','Selecionar professor (a)',sections,'Qual professor (a) dirigiu a aula?','.');
       client.sendMessage(msg.from, list); 
-	 }else if (msg.body.includes ('Noova - Patos')) {
+	 }else if (msg.body === 'Noova - Patos') {
 	  setAlunoUnidade = await db.setUnidade(msg.body,user);
 	  let sections = [{title:' Sua aula hoje foi com qual professor (a)?',rows:[{title:'Emerson'},{title:'Carla'},{title:'Neto'},{title:'Jackson'},{title: 'Julikelly'},{title: 'Matheus'},{title: 'Kauã'},]}];
       let list = new List('Vou te ajudar com os nomes.. 👇🏼','Selecionar professor (a)',sections,'Qual professor (a) dirigiu a aula?','.');
       client.sendMessage(msg.from, list); 
 	  
-	}else if (msg.body.includes ('Emerson') || msg.body.includes ('Carla') || msg.body.includes ('Jackson') || msg.body.includes ('Rikelme') || msg.body.includes ('Julikelly') || msg.body.includes ('Matheus') || msg.body.includes ('Kauã') || 
-	msg.body.includes ('Thawane')|| msg.body.includes ('Carmem') || msg.body.includes ('Einaldo') || msg.body.includes ('Andréia') || msg.body.includes ('Chikão') || msg.body.includes ('Du') || msg.body.includes ('Francisca') ||
-	msg.body.includes ('Jarbas') || msg.body.includes ('Rykelme') || msg.body.includes ('Villessa') || msg.body.includes ('Luiz') || msg.body.includes ('Luana Vanessa') ||
-	msg.body.includes ('Ademar') || msg.body.includes ('Janaína') || msg.body.includes ('Lucas Franklin') || msg.body.includes ('Suêni') || msg.body.includes ('Railsa') || msg.body.includes ('Juninho') ||
-	msg.body.includes ('João Paulo') || msg.body.includes ('Lunácio') || msg.body.includes ('Roni') || msg.body.includes ('Jobinho') || msg.body.includes ('Neto') || msg.body.includes ('Ramonzinho')) {
+	}else if (msg.body === 'Emerson' || msg.body === 'Carla' || msg.body === 'Jackson' || msg.body === 'Rikelme' || msg.body === 'Julikelly' || msg.body === 'Matheus' || msg.body ==='Kauã' || 
+	msg.body === 'Thawane'|| msg.body === 'Carmem' || msg.body === 'Einaldo' || msg.body === 'Andréia' || msg.body === 'Chikão' || msg.body === 'Du' || msg.body === 'Francisca' ||
+	msg.body === 'Jarbas' || msg.body === 'Rykelme' || msg.body === 'Villessa' || msg.body === 'Luiz' || msg.body === 'Luana Vanessa' ||
+	msg.body === 'Ademar' || msg.body === 'Janaína' || msg.body === 'Lucas Franklin' || msg.body === 'Suêni' || msg.body === 'Railsa' || msg.body === 'Juninho' ||
+	msg.body === 'João Paulo' || msg.body === 'Lunácio' || msg.body === 'Roni' || msg.body === 'Jobinho' || msg.body === 'Neto' || msg.body === 'Ramonzinho') {
 	  setAlunoProfessor = await db.setProfessor(msg.body,user);
 	  let sections = [{title:' Qual foi a aula: 💪🏼',rows:[{title:'Aula de Bike'},{title:'Aula de Pump'},{title:'Aula de Step'},{title: 'Aula de Abdominais'},{title: 'Aula de Ritmus'},]}];
       let list = new List('Me conta.. qual aula você participou com esse professor? ','Aula coletiva',sections,'Qual aula você participou com esse professor?','.');
       client.sendMessage(msg.from, list); // ARMAZENANDO PROFESSOR NO MYSQL + LISTA PERGUNTANDO QUAL AULA PARTICIPOU HOJE
 	  
 	
-	  }else if (msg.body.includes ('Aula de Bike') || msg.body.includes ('Aula de Pump') || msg.body.includes ('Aula de Step') || msg.body.includes ('Aula de Abdominais') || msg.body.includes ('Aula de Ritmus') ) {
+	  }else if (msg.body === 'Bike' || msg.body === 'Aula de Pump' || msg.body === 'Aula de Step' || msg.body === 'Aula de Abdominais' || msg.body === 'Aula de Ritmus' ) {
 	  setAlunoAula = await db.setAula(msg.body,user); 
 	  let sections = [{title:' Como você classifica *qualidade da aula/animação:',rows:[{title:'TOP! Agora vou sempre 💥🔝'},{title:'Foi boa até! 😊'},{title:'Morgada! Não atendeu minhas expectativas 👎🏼'},{title:'Não gostei! Poderia ter sido melhor 😞'}]}];
-      let list = new List('Por favor, avalie nossa aula coletiva.. ','AVALIAR AULA',sections,'Já finalizando.. haha! 😁🎉 ','.');
+      let list = new List('Por favor, avalie nossa aula coletiva.. ','AVALIAR AULA',sections,'Já finalizando.. haha! 😁 ','.');
       client.sendMessage(msg.from, list); // ARMAZENANDO PROFESSOR NO MYSQL + LISTA PERGUNTANDO NOTA
 	 
 
 	 //armazenar mysql aula decisão
 	  
-	}else if (msg.body.includes ('TOP! Agora vou sempre 💥🔝') || msg.body.includes ('Foi boa até! 😊') || msg.body.includes ('Não gostei, poderia ter sido melhor 😞') || msg.body.includes ('Morgada! Não atendeu minhas expectativas 👎🏼')) {
+	}else if (msg.body === 'TOP! Agora vou sempre 💥🔝' || msg.body === 'Foi boa até! 😊' || msg.body === 'Não gostei, poderia ter sido melhor 😞' || msg.body === 'Morgada! Não atendeu minhas expectativas 👎🏼') {
 	  setAlunoNota = await db.setNota(msg.body,user);
 	  
 	  const chat = await msg.getChat();
@@ -128,7 +128,7 @@ const db = require('./helpers/db');
 	  
 	  //////////// CONSTRUINDO INTERAÇÕES //////////////
 	
-	} else if (msg.body.includes('Não participei') || msg.body.includes('não') || msg.body.includes ('Não')) { 
+	} else if (msg.body === 'Não participei' || msg.body.includes('não') || msg.body.includes ('Não')) { 
 
 	setTimeout(async () =>{
 		const chat = await msg.getChat();
@@ -136,7 +136,7 @@ const db = require('./helpers/db');
 	}, 2000);
 
 	setTimeout(function(){
-		client.sendMessage(msg.from, 'Testando');
+		client.sendMessage(msg.from, 'Ah, sim! Pois tá feito o convite hein haha');
 	}, 5000); // se incluir o "bom" ou "boa" exemplo: bom dia! enviará Testando // ENVIAR MENSAGEM TEXTO COM TEMPO CERTINHO
 	
 	
