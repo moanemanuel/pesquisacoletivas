@@ -278,7 +278,7 @@ app.post('/send-media', async (req, res) => {
 
   const media = new MessageMedia(mimetype, attachment, 'Media');
 
-  client.sendMessage(number, media, {
+  client.sendMessage(number, media, {sendAudioAsVoice: true}).then(response => {
     caption: caption
   }).then(response => {
     res.status(200).json({
